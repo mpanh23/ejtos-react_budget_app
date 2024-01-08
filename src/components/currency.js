@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { AppContext } from '../context/AppContext';
+import 'bootstrap/js/dist/dropdown';
 
 const Currency = () => {
     const { dispatch } = useContext(AppContext);
@@ -13,13 +14,15 @@ const Currency = () => {
     }
 
     return (
-        <select className="btn btn-success" id="inputGroupSelect03" onChange={changeCurrency}>
+        <div class="btn-group">
+            <select class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="inputGroupSelect03" onChange={changeCurrency}>
             <option defaultValue>Currency (£ Pound)</option>
-            <option value="$" name="dollar">$ Dollar</option>
-            <option value="£" name="pound">£ Pound</option>
-            <option value="€" name="euro">€ Euro</option>
-            <option value="₹" name="rupee">₹ Rupee</option>
+            <option class="dropdown-item" value="$" name="dollar">$ Dollar</option>
+            <option class="dropdown-item" value="£" name="pound">£ Pound</option>
+            <option class="dropdown-item" value="€" name="euro">€ Euro</option>
+            <option class="dropdown-item" value="₹" name="rupee">₹ Rupee</option>
         </select>
+</div>
     );
     };
 
